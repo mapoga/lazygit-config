@@ -129,6 +129,10 @@ gui:
     # use blue for other authors
     '*': 'blue'
 
+  branchColors:
+    'main': 'magenta'
+    'master': 'red'
+
   # Config relating to the commit length indicator
   commitLength:
     # If true, show an indicator of commit message length
@@ -301,7 +305,8 @@ git:
   autoStageResolvedConflicts: true
 
   # Command used when displaying the current branch git log in the main window
-  branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
+  # branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
+  branchLogCmd: sh -c 'git log --all --graph --date-order --abbrev-commit --color=always --pretty=format:"%C(black)%h%Creset%C(auto)%d%Creset  %s  %C(black)%an%Creset %C(bold black)(%cr)%Creset" -- | sed -e s/\\*/●/ -e s/\\|/│/g'
 
   # Command used to display git log of all branches in the main window.
   # Deprecated: Use `allBranchesLogCmds` instead.
@@ -326,7 +331,7 @@ git:
 
   # If true, parse emoji strings in commit messages e.g. render :rocket: as 🚀
   # (This should really be under 'gui', not 'git')
-  parseEmoji: false
+  parseEmoji: true
 
   # Config for showing the log in the commits view
   log:
