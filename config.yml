@@ -306,7 +306,7 @@ git:
 
   # Command used when displaying the current branch git log in the main window
   # branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
-  branchLogCmd: sh -c 'git log --all --graph --date-order --abbrev-commit --color=always --pretty=format:"%C(black)%h%Creset%C(auto)%d%Creset  %s  %C(black)%an%Creset %C(bold black)(%cr)%Creset" -- | sed -e s/\\*/●/ -e s/\\|/│/g'
+  branchLogCmd: sh -c 'git log --all --graph --date-order --abbrev-commit --color=always --pretty=format:"%C(black)%h%Creset%C(auto)%d%Creset  %s  %C(black)%an%Creset %C(bold black)(%cr)%Creset%n" -- | sed -e s/\\*/●/ -e s/\\|/│/g'
 
   # Command used to display git log of all branches in the main window.
   # Deprecated: Use `allBranchesLogCmds` instead.
