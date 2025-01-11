@@ -124,13 +124,13 @@ gui:
 
   authorColors:
     # use red for John Smith
-    'Mathieu Goulet-Aubin': 'magenta'
-    'Mathieu Goulet Aubin': 'magenta'
+    'Mathieu Goulet-Aubin': 'cyan'
+    'Mathieu Goulet Aubin': 'cyan'
     # use blue for other authors
     '*': 'blue'
 
   branchColors:
-    'main': 'magenta'
+    'main': 'cyan'
     'master': 'red'
 
   # Config relating to the commit length indicator
